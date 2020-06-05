@@ -1,0 +1,35 @@
+
+<html>
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="stylesheet" href="style.css" />
+      <title>ToDoList</title>
+    </head>
+    <body>
+      <input id="input" placeholder="Add your daily task" />
+      <ul id="list"></ul>
+    </body>
+    <script>
+        var count = 1;
+        function newItem() {
+        var item = document.getElementById("input").value;
+        var ul = document.getElementById("list");
+        var li = document.createElement("li");
+        li.appendChild(document.createTextNode(count +") "+ item));
+        ul.appendChild(li);
+        document.getElementById("input").value = "";
+        li.onclick = lineTh;
+        count++;
+        }
+    document.body.onkeyup = function(e) {
+        if (e.keyCode == 13) {
+        newItem(); 
+        } 
+    };
+    function lineTh(e)
+    {
+        e.target.style.textDecoration = "line-through";
+    }
+</script>   
+</html>
