@@ -6,19 +6,19 @@
       <title>ToDoList</title>
     </head>
     <body>
-      <input id="input" placeholder="Add your daily task" />
+      <item id="item" placeholder="Add your daily task" />
       <ul id="list"></ul>
     </body>
     <script>
         var count = 1;
         function addTask()
         {
-          var task = document.getElementById("input").value;
+          var task = document.getElementById("item").value;
           var ul = document.getElementById("list");
           var li = document.createElement("li");
           li.appendChild(document.createTextNode(count +") "+ task));
           ul.appendChild(li);
-          document.getElementById("input").value = "";
+          document.getElementById("item").value = "";
           li.onclick = lineTh;
           count++;
         }
